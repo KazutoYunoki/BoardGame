@@ -54,6 +54,7 @@ public class Player {
 			//挟まれた石をひっくり返す
 			board.reverseStone(number, alpha);
 			
+			//ゲームが進行可能かどうかチェックする
 			if(board.finishCheck() == false)
 			{
 				//ゲーム終了を宣言する。

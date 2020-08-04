@@ -12,6 +12,9 @@ public class Stone {
 	/** 白色を表す定数 */
 	public static final int WHITE = 1;
 	
+	/** 何も置かれていないことを表す定数 */
+	public static final int SPACE = 2;
+	
 	
 	/** 石の色*/
 	private  int color;
@@ -25,7 +28,29 @@ public class Stone {
 		this.color = color;
 	}
 	
-	
+	/**
+	 * 石の色を返す関数
+	 * @return 石の色
+	 */
+	public int getColor()
+	{
+		return this.color;
+	}
+	/**
+	 * 石の反対の色を返す関数
+	 * @return 石の反対の色
+	 */
+	public int getReverseColor()
+	{
+		//黒なら白を返す
+		if(this.color == BLACK) {
+			return WHITE;
+		}
+		//白なら黒を返す
+		else {
+			return BLACK;
+		}
+	}
 	/**
 	 * 石の色をひっくり返す
 	 */
@@ -49,9 +74,13 @@ public class Stone {
 		if(stoneColor == BLACK) {
 			return "○";
 		}
-		else
+		else if(stoneColor == WHITE)
 		{
 			return "●";
+		}
+		else
+		{
+			return " ";
 		}
 		
 	}
